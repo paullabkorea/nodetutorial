@@ -1,8 +1,10 @@
-const 이호준개인프로필 = require('./two');
+import {이름, 나이, 한살더먹음, 값가져와} from './two.js';
+// const 개인프로필 = require('./two');
 
-console.log(이호준개인프로필.이름);
-console.log(이호준개인프로필.나이);
-이호준개인프로필.한살더먹음();
-이호준개인프로필.한살더먹음();
-//console.log(이호준개인프로필.나이); //이렇게 출력하면 증가안됨
-console.log(이호준개인프로필.값가져와());
+
+console.log(이름);
+console.log(나이);
+한살더먹음();
+한살더먹음();
+console.log(나이); //이번에는 출력이 되었죠?
+console.log(값가져와());
