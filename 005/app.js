@@ -1,3 +1,4 @@
+// 참고링크  : https://nodejs.org/dist/latest-v14.x/docs/api/path.html
 const path = require('path');
 
 console.log(`구분자 : ${path.sep}`);
