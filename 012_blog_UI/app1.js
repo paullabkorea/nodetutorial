@@ -13,7 +13,7 @@ const blogRouter = require('./router/blog.js');
 const app = express();
 app.set('view engine', 'html');
 
-nunjucks.configure('template', {
+nunjucks.configure('resource/template', { // 수정 1
     autoescape: true,
     express: app,
     watch: true

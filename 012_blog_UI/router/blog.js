@@ -32,7 +32,8 @@ router.get('/', (req, res, next) => {
     console.log(req.query);
     const section = req.query.section;
     const data = section ? blogs.filter(b => b.section === section) : blogs;
-    res.status(200).json(data);
+    // console.log(data); // 수정 1
+    res.render('test1.html', {data}); // 수정 1 data:data와 같습니다. 둘 다 같을 경우 생략 가능해요.
 })
 // * /blog/?section=:section - 해당 섹션만 모아 볼 수 있도록
 // * /about - 내 소개
