@@ -1,5 +1,8 @@
 # 로그인
 
+* 누가 어떤 요청을 했는지 어떻게 구분할까요?
+* IP로는 구분할 수 없습니다. NAT와 같은 네트워크 장비에서 통합할 수도 있거든요.
+
 1. Client -> ID, PW 입력
 2. Server -> ID, PW 확인 후 맞으면 session DB에 생성(object{아이디, 만료시간...})
 3. Server -> session object를 Client에 cookie로 전달(보통 js로 컨트롤 못하게 httponly 사용)

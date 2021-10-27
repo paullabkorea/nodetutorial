@@ -1,4 +1,5 @@
 // npm i cookie-parser express-session
+// jwt vs session라고 검색해보세요. 저는 jwt를 주로 사용하는 편입니다.
 // test.html은 liveserver로 실행시키세요.
 const express = require('express');
 const session = require('express-session');

@@ -11,11 +11,15 @@
 const express = require('express');
 const indexRouter = require('./router'); // 뒤에 index.js 생략 가능
 const blogRouter = require('./router/blog.js');
+const path = require('path');
 
 const app = express();
 
+app.use('/', express.static(path.join(__dirname, 'resource'))); // 3번 파일에서 다시 얘기
+
 app.use('/', indexRouter);
 app.use('/blog', blogRouter);
+
 
 app.use((req, res, next) => {
     res.status(404).send('Not Found');
