@@ -1,0 +1,13 @@
+# 주석
+# 폴더
+node_modules/
+a/
+b/
+c/
+
+# 파일
+a.txt
+b.txt
+
+#환경설정
+#.env
