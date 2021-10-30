@@ -13,10 +13,13 @@ console.log("DB_PASSWORD:", process.env.DB_PASSWORD);
 
 const app = express();
 
-app.use(morgan('dev')); // 배포할 때에는 dev 대신 combined, combined를 사용하면 브라우저, ip 등이 뜹니다.
+app.use(morgan('dev')); // 배포할 때에는 dev 대신 combined, combined를 사용하면 브라우저, ip 등이 뜹니다. 저는 보통 app 바로 아래 넣어놓습니다.
 app.use('/', express.static(path.join(__dirname, 'resource'))); // 해당 폴더에서 정적파일 제공(기본 제공), resouce는 외부노출 url이 아닙니다.
-// 보통은 public 폴더로 사용하는데 보안상 권장하지 않음
+// 보통은 public 폴더로 사용하는데 보안상 권장하지 않음, 뒤에 난해한 이름을 붙이기도 함
 // static 옵션은 공식 문서 참고
+// 순서가 중요해서 저는 보통 app 바로 아래, morgan 바로 아래에 넣는 편입니다.
+// 왜냐하면 정적파일을 찾아버리면 아래 미들웨어로 넘어가지 않아서 리소스를 아낄 수 있습니다.
+// 로그인 사용자에게만 해당 파일이 보여질 경우 session 부분이 상단으로 가긴 합니다.
 // 링크 : http://expressjs.com/ko/api.html#express.static
 
 

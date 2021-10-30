@@ -1,5 +1,5 @@
 // npm init --yes
-// npm i express cookie-parser
+// npm i express cookie-parser // 굳이 할 필요가 없지만 쿠키관련된 강의니 넣어놓습니다.
 // npm i nodemon --save-dev
 
 const express = require('express');
@@ -24,9 +24,12 @@ app.get('/', (req, res, next) => {
     if (req.cookies.session){
         if (req.cookies.session == 'abcde'){
             //abcde라는 것은 아래처럼 매핑이 되어 있는 상태인거죠.
-            session = {'abcde':'hojun'}
+            session = {'abcde':'hojun'} //서버에 저장되어 있는 session이라 생각해주세요.
             return res.end(`${session['abcde']}, welcome our homepage!!`);
         } else {
+            // 만료시간을 지정하지 않았기 때문에 이 구간으로 들어오진 않습니다.
+            // id=hojun; age=10; hello=world; Expires=만료시간; HttpOnly;
+            // 위와 같이 지정해줄 수 있지만 이렇게 사용할 것이 아니기 때문에 지정하지 않은 것입니다.
             return res.end('로그인 지속 시간이 지났습니다. 재 로그인 해주세요.')
         }
     } else {

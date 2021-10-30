@@ -36,7 +36,7 @@ app.use(session({
 
 app.get('/', (req, res, next) => {
     console.log(req.body);
-    console.log(req.session)
+    console.log(req.session);
     // res.send('hello world');
     if(!req.session.name){
         req.session.name = 'hojun';
