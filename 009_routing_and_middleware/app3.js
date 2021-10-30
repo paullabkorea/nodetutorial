@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan'); // 추가로그 확인
 const dotenv = require('dotenv'); // 미들웨어 아닙니다. 여러 패스워드 및 환경 설정을 위해 사용합니다. 보통은 .gitignore를 설정하여 이 파일을 무시하도록 합니다. .gitignore 파일로 들어가보세요. push가 안되는 파일들 목록을 보실 수 있습니다.
 // 아래와 같이 설정하면 원격 파일을 제거합니다. 로컬에 있는 파일은 삭제하지 않습니다.
+// 꼭 최상위 폴더가 아니어도 괜찮습니다. 알아서 현재폴더 기준으로 무시합니다.
 // git rm -r --cached .
 // git rm -r --cached [File name]
 // 이걸 일반적인 파일로 관리할 수도 있지만, 실무에서는 그렇게 하지 않습니다.
