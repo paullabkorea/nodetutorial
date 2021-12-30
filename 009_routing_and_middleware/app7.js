@@ -1,5 +1,4 @@
 // npm i helmet
-// test.html은 liveserver로 실행시키세요.
 const express = require('express');
 const helmet = require('helmet'); 
 
