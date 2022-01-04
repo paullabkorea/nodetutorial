@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="test.css">
 </head>
 <body>
-    <!-- // style은 안됩니다! 다른 파일에서 파일을 또 읽어오는 것이 안된다는 얘기에요. -->
     <h1>hello world</h1>
+    {% for i in data %}
+        <h1>{{ i.id }}</h1>
+        <p>{{ i.title }}</p>
+    {% endfor %}
 </body>
 </html>

@@ -13,7 +13,7 @@ const blogRouter = require('./router/blog.js');
 const app = express();
 app.set('view engine', 'html');
 
-nunjucks.configure('resource/template', { // 수정 1
+nunjucks.configure('template', {
     autoescape: true,
     express: app,
     watch: true
@@ -26,7 +26,7 @@ app.use(morgan('tiny'));
 
 app.use('/blog', blogRouter);
 
-app.get('/', (req, res, next) => {
+app.get('/', (req, res) => {
     res.send('hello world')
     // res.render('test1.html', { 
     //     name : "hojun!",
@@ -43,7 +43,5 @@ app.use((err, req, res, next) => {
     console.log(err);
     res.sendStatus(500);
 })
-
-
 
 app.listen(8080);
